@@ -16,7 +16,6 @@ namespace Day3
                     Map[i, j] = line[j];
                 }
             }
-            Console.WriteLine(Map.Length);
         }
 
         public override string ToString()
