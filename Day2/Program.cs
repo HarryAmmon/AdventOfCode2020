@@ -30,7 +30,6 @@ namespace Day2
                 {
                     validPasswords++;
                 }
-
             }
 
             return validPasswords;
