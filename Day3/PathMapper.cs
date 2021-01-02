@@ -1,3 +1,5 @@
+using System;
+
 namespace Day3
 {
     public class PathMapper
@@ -8,29 +10,39 @@ namespace Day3
             _map = map;
         }
 
-        public int TreesHit(int x, int y)
+        public int TreesHit(int increaseXBy, int increaseYBy)
         {
             int count = 0;
-            for (int i = 0; i < _map.Map.GetLength(1); i += y)
+            int y = 0;
+
+            int xLength = _map.Map.GetLength(0);
+            int yLength = _map.Map.GetLength(1);
+
+            for (int x = 0; x < xLength; x += increaseXBy)
             {
-                for (int j = 0; j < _map.Map.GetLength(0); i += x)
+                if (_map.Map[x, y] == '#')
                 {
-                    if (i > _map.Map.GetLength(1))
-                    {
-                        return count;
-                    }
-                    else if (j > _map.Map.GetLength(0))
-                    {
-                        return count;
-                    }
-                    else if (_map.Map[j, i] == '#')
-                    {
-                        count++;
-                    }
+
+                    count++;
                 }
+                y = CalculateYValue(y, increaseYBy);
             }
 
             return count;
+        }
+
+        private int CalculateYValue(int currentY, int increaseYBy)
+        {
+            for (int i = 0; i < increaseYBy; i++)
+            {
+                currentY++;
+                if (currentY >= _map.Map.GetLength(1))
+                {
+                    currentY = 0;
+                }
+            }
+
+            return currentY;
         }
     }
 }

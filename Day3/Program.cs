@@ -20,7 +20,7 @@ namespace Day3
             string output = area.ToString();
             Console.WriteLine(output);
 
-            int result = mapper.TreesHit(3, 1);
+            int result = mapper.TreesHit(1, 3);
 
 
 
