@@ -1,4 +1,4 @@
-namespace Day4
+namespace Solutions.Entities
 {
     public class NorthPoleCredentials
     {

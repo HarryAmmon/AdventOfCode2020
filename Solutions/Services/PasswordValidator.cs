@@ -1,4 +1,6 @@
-namespace Day2
+using Solutions.Entities;
+
+namespace Solutions.Services
 {
     public class PasswordValidator
     {

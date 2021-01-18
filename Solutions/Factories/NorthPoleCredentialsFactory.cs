@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using Solutions.Entities;
 
-namespace Day4
+namespace Solutions.Factories
 {
     public class NorthPoleCredentialsFactory
     {

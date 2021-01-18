@@ -1,27 +1,20 @@
-﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using Solutions.Entities;
+using Solutions.Services;
+using AdventOfCodeCore;
 
-namespace Day2
+namespace Solutions
 {
-    class Program
+    public class Day2 : ISolution<int>
     {
-        static PasswordValidator validator = new PasswordValidator();
-        static void Main(string[] args)
-        {
-            string[] fileLines = File.ReadAllLines("input.txt");
-
-            Console.WriteLine(Part1(fileLines));
-            Console.WriteLine(Part2(fileLines));
-        }
-
-
-        static int Part1(string[] fileLines)
+        PasswordValidator validator = new PasswordValidator();
+        public int Part1(string[] fileContent)
         {
             List<Password> pwordList = new List<Password>();
             int validPasswords = 0;
 
-            foreach (string line in fileLines)
+            foreach (string line in fileContent)
             {
                 Password password = new Password(line);
                 password.Valid = validator.OccurrencePolicy(password);
@@ -35,12 +28,12 @@ namespace Day2
             return validPasswords;
         }
 
-        static int Part2(string[] fileLines)
+        public int Part2(string[] fileContent)
         {
             List<Password> pwordList = new List<Password>();
             int validPasswords = 0;
 
-            foreach (string line in fileLines)
+            foreach (string line in fileContent)
             {
                 Password password = new Password(line);
                 password.Valid = validator.PositionPolicy(password);

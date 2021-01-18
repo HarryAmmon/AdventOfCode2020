@@ -1,4 +1,4 @@
-namespace Day2
+namespace Solutions.Entities
 {
     public class Password
     {

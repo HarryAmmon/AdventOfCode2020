@@ -1,6 +1,6 @@
 using System;
 
-namespace Day3
+namespace Solutions.Entities
 {
     public class AreaMap
     {

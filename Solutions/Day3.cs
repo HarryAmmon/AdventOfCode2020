@@ -1,19 +1,13 @@
-﻿using System;
-using System.IO;
+using System;
+using Solutions.Entities;
+using Solutions.Services;
+using AdventOfCodeCore;
 
-namespace Day3
+namespace Solutions
 {
-    class Program
+    public class Day3 : ISolution<int>
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-            string[] fileContent = File.ReadAllLines("input.txt");
-            Console.WriteLine($"PART1: {Part1(fileContent)}");
-            Console.WriteLine($"PART2: {Part2(fileContent)}");
-        }
-
-        static int Part1(string[] fileContent)
+        public int Part1(string[] fileContent)
         {
             AreaMap area = new AreaMap(fileContent);
             PathMapper mapper = new PathMapper(area);
@@ -26,7 +20,7 @@ namespace Day3
             return result;
         }
 
-        static int Part2(string[] fileContent)
+        public int Part2(string[] fileContent)
         {
             AreaMap area = new AreaMap(fileContent);
             PathMapper mapper = new PathMapper(area);

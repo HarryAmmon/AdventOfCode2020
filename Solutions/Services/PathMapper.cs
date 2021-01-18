@@ -1,6 +1,7 @@
 using System;
+using Solutions.Entities;
 
-namespace Day3
+namespace Solutions.Services
 {
     public class PathMapper
     {

@@ -1,20 +1,10 @@
-﻿using System;
-using System.IO;
-namespace Day1
+using AdventOfCodeCore;
+
+namespace Solutions
 {
-    class Program
+    public class Day1 : ISolution<int>
     {
-        static void Main(string[] args)
-        {
-            string[] fileContent = File.ReadAllLines("input.txt");
-
-
-
-            Console.WriteLine(Part1(fileContent));
-            Console.WriteLine(Part2(fileContent));
-        }
-
-        static int Part1(string[] fileContent)
+        public int Part1(string[] fileContent)
         {
             for (int i = 0; i < fileContent.Length; i++)
             {
@@ -31,7 +21,7 @@ namespace Day1
             return -1;
         }
 
-        static int Part2(string[] fileContent)
+        public int Part2(string[] fileContent)
         {
             for (int i = 0; i < fileContent.Length; i++)
             {
