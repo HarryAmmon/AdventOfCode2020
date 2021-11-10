@@ -17,6 +17,7 @@ namespace Solutions.Services
 
             Ticket ticket = new Ticket()
             {
+                BinaryIndicator = ticketString,
                 RowNumber = rowNumber,
                 SeatNumber = seatNumber
             };
@@ -29,14 +30,14 @@ namespace Solutions.Services
             int currentMax = MaxColumn;
             int currentMin = MinColumn;
 
-            for (int i = 6; i < ticket.Length; i++)
+            for (int i = 7; i < ticket.Length; i++)
             {
                 int midPoint = CalculateMidpoint(currentMin, currentMax, ticket[i]);
-                if (ticket[i] == 'L')
+                if (ticket[i] == 'R')
                 {
                     currentMin = midPoint;
                 }
-                else if (ticket[i] == 'R')
+                else if (ticket[i] == 'L')
                 {
                     currentMax = midPoint;
                 }
@@ -77,3 +78,5 @@ namespace Solutions.Services
         }
     }
 }
+
+// FBFBBFFRLR

@@ -32,14 +32,14 @@ namespace Solutions
                 ITicketScanner scanner = new TicketScanner();
                 tickets.Add(scanner.GenerateTicket(row));
             }
-            tickets = tickets
-                        .OrderBy(x => x.RowNumber)
-                        .ThenBy(x => x.SeatNumber)
-                        .ToList();
+            tickets = tickets.OrderBy(x => x.SeatID).ToList();
 
-            foreach (Ticket ticket in tickets)
+            for (int i = 1; i < tickets.Count; i++)
             {
-                Console.WriteLine(ticket.ToString());
+                if (tickets[i].SeatID - tickets[i - 1].SeatID == 2)
+                {
+                    return (tickets[i].SeatID - 1);
+                }
             }
 
             return -1;

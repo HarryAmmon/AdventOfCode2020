@@ -3,6 +3,8 @@ namespace Solutions.Entities
     public class Ticket
     {
         public int RowNumber { get; set; }
+
+        public string BinaryIndicator { get; set; }
         public int SeatNumber { get; set; }
         public int SeatID
         {
@@ -14,7 +16,7 @@ namespace Solutions.Entities
 
         public override string ToString()
         {
-            return $"RowNumber: {RowNumber}, SeatNumber: {SeatNumber}";
+            return $"{BinaryIndicator}:{SeatID} -- RowNumber: {RowNumber}, SeatNumber: {SeatNumber}";
         }
     }
 }
